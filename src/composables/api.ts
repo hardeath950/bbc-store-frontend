@@ -8,9 +8,6 @@ interface ApiConfig extends setCacheConfig {
   headers?: { [key: string]: string }
 }
 
-const defaultConfig = {
-  baseUrl: import.meta.env.BASE_URL,
-}
 // USE CHACHE STORE
 const useCache = useCacheStore()
 
@@ -44,6 +41,5 @@ export async function useFind(endpoint: string, config?: ApiConfig) {
       status.value = false
     }
   }
-
   return { status, content }
 }
