@@ -1,0 +1,18 @@
+version: "3.4"
+
+services:
+  en-space:
+    build:
+      context: ./
+      dockerfile: ./Dockerfile
+    environment:
+      VITE_API_ENDPOINT: http://localhost:1337
+      VITE_MODULE_TOKEN: enspace4c4c
+      VITE_PORTAL_URL: https://app-dev.portaldoben.com.br
+      VITE_APP_TITLE: "[LOCALHOST] EN-SPACE"
+      VITE_BASE_URL: http://localhost:3333
+    volumes:
+      - ./:/app:delegated
+    ports:
+      - 3333:3333
+      - 3010:3010
