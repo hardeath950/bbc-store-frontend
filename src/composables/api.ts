@@ -31,7 +31,7 @@ export async function useFind(endpoint: string, config?: ApiConfig) {
   }
   else {
     // FETCH API
-    const { data, statusCode } = await useFetch(endpoint, {})
+    const { data, statusCode } = await customFetch(endpoint, {}).get().json()
     // CHECK STATUS AND SAVE TO CACHE IF CONFIG IS SET
     if (statusCode.value && statusCode.value > 199 && statusCode.value < 300 && config && config.cache) {
       useCache.setValue(hash, data.value, { ...config })
