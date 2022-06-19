@@ -1,8 +1,10 @@
 import { createI18n } from 'vue-i18n'
-import type { UserModule } from '~/types'
+import { type UserModule } from '~/types'
 
 // Import i18n resources
 // https://vitejs.dev/guide/features.html#glob-import
+//
+// Don't need this? Try vitesse-lite: https://github.com/antfu/vitesse-lite
 const messages = Object.fromEntries(
   Object.entries(
     import.meta.globEager('../../locales/*.y(a)?ml'))
@@ -13,14 +15,10 @@ const messages = Object.fromEntries(
 )
 
 export const install: UserModule = ({ app }) => {
-  if (!localStorage.getItem('language'))
-    localStorage.setItem('language', 'pt-BR')
-
   const i18n = createI18n({
     legacy: false,
-    locale: localStorage.getItem('language') || 'pt-BR',
+    locale: 'en',
     messages,
-
   })
 
   app.use(i18n)
