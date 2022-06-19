@@ -2,7 +2,11 @@ import { createFetch } from '@vueuse/core'
 import _ from 'lodash'
 import { useAuthStore } from '~/store/auth'
 
-export function useCustomFetch(config: any) {
+interface cFetchConfig {
+  auth?: boolean
+}
+
+export function useCustomFetch(config: cFetchConfig) {
   const useAuth = useAuthStore()
   // CREATE CUSTOM FETCH
   const customFetch = createFetch({
@@ -16,9 +20,6 @@ export function useCustomFetch(config: any) {
 
         return { options }
       },
-    },
-    fetchOptions: {
-      mode: 'cors',
     },
   })
 

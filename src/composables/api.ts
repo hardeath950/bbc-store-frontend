@@ -1,5 +1,6 @@
 // these APIs are auto-imported from @vueuse/core
 import _ from 'lodash'
+import { useCustomFetch } from './cFetch'
 import { useCacheStore } from '~/store/cache'
 import type { setCacheConfig } from '~/store/cache'
 
@@ -19,6 +20,7 @@ const useCache = useCacheStore()
 export async function useFind(endpoint: string, config?: ApiConfig) {
   const status = ref(false)
   const content = ref<any[]>([])
+  const { customFetch } = useCustomFetch({ auth: config?.auth })
 
   const hash = useCache.createHash(`find__${endpoint}`)
   const cached = useCache.getValue(hash)
