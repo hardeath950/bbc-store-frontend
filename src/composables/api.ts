@@ -19,7 +19,7 @@ export async function useFind(url: string, config?: setCacheConfig) {
   // CHECK IF CACHED
   const cached = useCache.getValue(hash)
   // RETURN CACHED DATA
-  if (cached)
+  if (cached && config && config.cache)
     return cached
 
   // FETCH API
