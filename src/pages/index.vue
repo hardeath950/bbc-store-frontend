@@ -17,8 +17,8 @@ const { t } = useI18n()
       <div i-carbon-campsite inline-block />
     </div>
     <p>
-      <a rel="noreferrer" href="https://github.com/antfu/vitesse" target="_blank">
-        Vitesse
+      <a rel="noreferrer" href="https://github.com/hardeath950/bbc-store-frontend" target="_blank">
+        Vitesse Store
       </a>
     </p>
     <p>
