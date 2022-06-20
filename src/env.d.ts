@@ -2,9 +2,13 @@
 
 interface ImportMetaEnv {
   /**
-   * Application Title (eq [LOCALHOST] PagBe)
+   * Application Title (eq [LOCALHOST] MyApp)
    */
   readonly VITE_APP_TITLE: string
+  /**
+   * Application Token for backend identification (eq anything123)
+   */
+  readonly VITE_APP_TOKEN: string
   /**
    * API Endpoint (eq http://localhost:1337)
    */
