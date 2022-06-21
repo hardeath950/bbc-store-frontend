@@ -1,12 +1,11 @@
 // these APIs are auto-imported from @vueuse/core
 import _ from 'lodash'
-import { useCustomFetch } from './cFetch'
+import { createCustomFetch } from './cFetch'
 import { useCacheStore } from '~/store/cache'
 import type { setCacheConfig } from '~/store/cache'
 
 interface ApiConfig extends setCacheConfig {
   auth?: boolean
-  headers?: { [key: string]: string }
 }
 
 // USE CHACHE STORE
@@ -20,7 +19,7 @@ const useCache = useCacheStore()
 export async function useFind(endpoint: string, config?: ApiConfig) {
   const status = ref(false)
   const content = ref<any[]>([])
-  const { customFetch } = useCustomFetch({ auth: config?.auth })
+  const { useCustomFetch } = createCustomFetch({ auth: config?.auth })
 
   const hash = useCache.createHash(`find__${endpoint}`)
   const cached = useCache.getValue(hash)
@@ -31,7 +30,7 @@ export async function useFind(endpoint: string, config?: ApiConfig) {
   }
   else {
     // FETCH API
-    const { data, statusCode } = await customFetch(endpoint, {}).get().json()
+    const { data, statusCode } = await useCustomFetch(endpoint, {}).get().json()
     // CHECK STATUS AND SAVE TO CACHE IF CONFIG IS SET
     if (statusCode.value && statusCode.value > 199 && statusCode.value < 300 && config && config.cache) {
       useCache.setValue(hash, data.value, { ...config })
