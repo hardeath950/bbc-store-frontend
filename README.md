@@ -1,3 +1,10 @@
+[![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=hardeath950_bbc-store-frontend&metric=security_rating)](https://sonarcloud.io/summary/new_code?id=hardeath950_bbc-store-frontend)
+[![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=hardeath950_bbc-store-frontend&metric=vulnerabilities)](https://sonarcloud.io/summary/new_code?id=hardeath950_bbc-store-frontend)
+[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=hardeath950_bbc-store-frontend&metric=sqale_rating)](https://sonarcloud.io/summary/new_code?id=hardeath950_bbc-store-frontend)
+[![Bugs](https://sonarcloud.io/api/project_badges/measure?project=hardeath950_bbc-store-frontend&metric=bugs)](https://sonarcloud.io/summary/new_code?id=hardeath950_bbc-store-frontend)
+
+
+
 <p align='center'>
   <img src='https://bobcorn.com.br/wp-content/uploads/2021/04/logo.png' alt='Bobcorn Store Template' width='300'/>
 </p>
