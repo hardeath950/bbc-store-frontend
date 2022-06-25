@@ -124,3 +124,4 @@ pnpm build
 
 And you will see the generated file in `dist` that is ready to be served.
 
+[![SonarCloud](https://sonarcloud.io/images/project_badges/sonarcloud-orange.svg)](https://sonarcloud.io/summary/new_code?id=hardeath950_bbc-store-frontend)
