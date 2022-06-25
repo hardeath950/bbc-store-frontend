@@ -16,7 +16,7 @@ bbc-store project merged with <b>Vitesse</b><sup><em>(speed)</em></sup><br>
 <br>
 
 <p align='center'>
-<a href="https://app-dev.portaldoben.com.br/">Live Dev Server</a>
+<a href="https://bbc-store-frontend.vercel.app/">Live Dev Server</a>
 </p>
 
 <br>
