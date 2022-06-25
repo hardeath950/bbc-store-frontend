@@ -2,18 +2,18 @@ import { createFetch } from '@vueuse/core'
 import _ from 'lodash'
 import { useAuthStore } from '~/store/auth'
 
-interface cHeader {
+interface Header {
   key: string
   value: string
 }
 
-interface cFetchConfig {
+interface FetchConfig {
   auth?: boolean
   appToken?: boolean
-  headers?: cHeader[]
+  headers?: Header[]
 }
 
-export function createCustomFetch(config?: cFetchConfig) {
+export function createCustomFetch(config?: FetchConfig) {
   const useAuth = useAuthStore()
   // CREATE CUSTOM FETCH
   const useCustomFetch = createFetch({

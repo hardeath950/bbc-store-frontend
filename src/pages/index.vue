@@ -1,11 +1,11 @@
 <script setup lang="ts">
 const user = useUserStore()
-const name = $ref(user.savedName)
+const input = $ref(user.savedName)
 
 const router = useRouter()
 const go = () => {
-  if (name)
-    router.push(`/hi/${encodeURIComponent(name)}`)
+  if (input)
+    router.push(`/hi/${encodeURIComponent(input)}`)
 }
 
 const { t } = useI18n()
@@ -17,7 +17,7 @@ const { t } = useI18n()
       <div i-carbon-campsite inline-block />
     </div>
     <p>
-      <a rel="noreferrer" href="https://github.com/hardeath950/bbc-store-frontend" target="_blank">
+      <a rel="noopener" href="https://github.com/hardeath950/bbc-store-frontend" target="_blank">
         Vitesse Store
       </a>
     </p>
@@ -29,7 +29,7 @@ const { t } = useI18n()
 
     <input
       id="input"
-      v-model="name"
+      v-model="input"
       :placeholder="t('intro.whats-your-name')"
       :aria-label="t('intro.whats-your-name')"
       type="text"
@@ -47,7 +47,7 @@ const { t } = useI18n()
     <div>
       <button
         btn m-3 text-sm
-        :disabled="!name"
+        :disabled="!input"
         @click="go"
       >
         {{ t('button.go') }}

@@ -2,7 +2,7 @@ import { acceptHMRUpdate, defineStore } from 'pinia'
 import forge from 'node-forge'
 import type { RemovableRef } from '@vueuse/core'
 
-export interface cacheItem {
+export interface CacheItem {
   key: string
   alias?: string
   created_at: string
@@ -10,11 +10,11 @@ export interface cacheItem {
   data: any
 }
 
-export interface setCacheConfig {
+export interface SetCacheConfig {
   /**
    * Active response cache
    * @default false
-   * @memberof setCacheConfig
+   * @memberof SetCacheConfig
    * @type boolean
    * @example true
    */
@@ -23,7 +23,7 @@ export interface setCacheConfig {
    * Cache expire time in seconds
    * default is 30 seconds
    * @type {number} - seconds
-   * @memberof setCacheConfig
+   * @memberof SetCacheConfig
    * @default 30
    * @example
     */
@@ -31,7 +31,7 @@ export interface setCacheConfig {
   /**
    * alias to use for cache key
    * @type {string}
-   * @memberof setCacheConfig
+   * @memberof SetCacheConfig
    * @default ''
    * @example 'my-alias'
    * */
@@ -42,7 +42,7 @@ export interface setCacheConfig {
 
 export interface cacheStore {
   defaultCacheLife: number
-  cacheDB: RemovableRef<cacheItem[]>
+  cacheDB: RemovableRef<CacheItem[]>
 }
 
 /***
@@ -67,7 +67,7 @@ export const useCacheStore = defineStore('cache', {
      * @param key - key to reference a value
      * @param data - Data to set
      */
-    setValue(key: string, data: any, config?: setCacheConfig) {
+    setValue(key: string, data: any, config?: SetCacheConfig) {
       const { life, alias } = config || {}
       // create default time/life to cache
       const lifeTime = life || this.defaultCacheLife
