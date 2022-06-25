@@ -2,9 +2,9 @@
 import _ from 'lodash'
 import { createCustomFetch } from './cFetch'
 import { useCacheStore } from '~/store/cache'
-import type { setCacheConfig } from '~/store/cache'
+import type { SetCacheConfig } from '~/store/cache'
 
-interface ApiConfig extends setCacheConfig {
+interface ApiConfig extends SetCacheConfig {
   auth?: boolean
 }
 
