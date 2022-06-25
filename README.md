@@ -4,25 +4,18 @@
 [![Bugs](https://sonarcloud.io/api/project_badges/measure?project=hardeath950_bbc-store-frontend&metric=bugs)](https://sonarcloud.io/summary/new_code?id=hardeath950_bbc-store-frontend)
 
 
-
 <p align='center'>
-  <img src='https://bobcorn.com.br/wp-content/uploads/2021/04/logo.png' alt='Bobcorn Store Template' width='300'/>
+  <img src='https://bobcorn.com.br/wp-content/uploads/2021/04/logo.png' alt='Bobcorn Store Template' width='250'/>
 </p>
 
 <p align='center'>
 bbc-store project merged with <b>Vitesse</b><sup><em>(speed)</em></sup><br>
 </p>
 
-<br>
-
 <p align='center'>
 <a href="https://bbc-store-frontend.vercel.app/">Live Dev Server</a>
 </p>
-
-<br>
 </p>
-
-<br>
 
 ## Features
 
