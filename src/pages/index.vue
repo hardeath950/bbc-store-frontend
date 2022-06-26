@@ -2,7 +2,6 @@
 import ProductList from '../components/ProductList.vue'
 import type { Product } from '~/types/Store'
 import { useFind } from '~/composables/api'
-
 const products = ref<Product[]>([])
 
 async function loadProducts() {

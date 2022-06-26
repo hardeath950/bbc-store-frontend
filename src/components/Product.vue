@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import type { Product } from '~/types/Store'
+import { useFormatter } from '~/composables/helpers'
 
 const props = defineProps<{
   product: Product
@@ -20,7 +21,10 @@ const props = defineProps<{
         -
       </span>
       <span>
-        {{ props.product.attributes.sale_price }}
+        {{ useFormatter(props.product.attributes.sale_price, {
+          type: 'number',
+          n_style: 'currency',
+        }) }}
       </span>
     </div>
     <!-- PRD. DESCRIPTION -->
