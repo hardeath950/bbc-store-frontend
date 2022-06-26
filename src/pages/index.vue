@@ -1,6 +1,25 @@
 <script setup lang="ts">
+import { useFind } from '~/composables/api'
 const user = useUserStore()
 const input = $ref(user.savedName)
+
+interface Product {
+  id: number
+  attributes: {
+    createdAt: string
+    name: string
+    description: string
+    sale_price: number
+    images: any[]
+  }
+}
+
+const products = ref<Product[]>([])
+
+async function loadProducts() {
+  const { content } = await useFind('store-products')
+  products.value = content.value.data
+}
 
 const router = useRouter()
 const go = () => {
@@ -9,6 +28,8 @@ const go = () => {
 }
 
 const { t } = useI18n()
+
+loadProducts()
 </script>
 
 <template>
@@ -54,6 +75,19 @@ const { t } = useI18n()
       </button>
     </div>
   </div>
+  <!-- PRODUCTS WRAPPER -->
+  <div class="flex items-center justify-center">
+    <!-- PRODUCT -->
+    <div
+      v-for="product, index in products"
+      :key="`prod_${index}`"
+      class="border-2 p-2 rounded-xl shadow-lg"
+    >
+      {{ product.attributes.name }}
+    </div>
+    <!-- __END PRODUCT -->
+  </div>
+  <!-- _END PRODUCTS WRAPPER -->
 </template>
 
 <route lang="yaml">

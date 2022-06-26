@@ -28,12 +28,12 @@ export function createCustomFetch(config?: FetchConfig) {
     options: {
       // BEFORE FETCH
       async beforeFetch({ options }) {
-        // INCLUDE APP TOKEN?
-        if (options.headers && config && config.appToken)
-          _.set(options.headers, 'appToken', import.meta.env.VITE_APP_TOKEN)
         // INCLUDE AUTH?
         if (options.headers && config && config.auth)
           _.set(options.headers, 'Authorization', `Bearer ${useAuth.jwt}`)
+        // INCLUDE APP TOKEN?
+        if (options.headers && config && config.appToken)
+          _.set(options.headers, 'appToken', import.meta.env.VITE_APP_TOKEN)
         // INCLUDE CUSTOM HEADERS?
         if (options.headers && config && config.headers && config.headers.length) {
           config.headers.forEach((header) => {
