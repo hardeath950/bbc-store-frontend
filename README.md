@@ -9,7 +9,7 @@
 </p>
 
 <p align='center'>
-bbc-store project merged with <b>Vitesse</b><sup><em>(speed)</em></sup><br>
+bbc-store forked from <b>Vitesse</b><sup><em>(speed)</em></sup><br>
 </p>
 
 <p align='center'>
