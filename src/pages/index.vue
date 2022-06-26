@@ -16,7 +16,7 @@ const products = ref<Product[]>([])
 
 async function loadProducts() {
   const { content } = await useFind('store-products')
-  products.value = content.value.data
+  products.value = content.value ? content.value.data : []
 }
 
 const { t } = useI18n()
