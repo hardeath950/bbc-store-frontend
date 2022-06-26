@@ -11,10 +11,18 @@ const props = defineProps<{
   <div
     class="border-2 p-2 rounded-xl shadow-lg max-h-sm"
   >
-    <!-- PRD. NAME -->
-    <span class="font-bold">
-      {{ props.product.attributes.name }}
-    </span>
+    <div class="flex justify-center items-center space-x-2">
+      <!-- PRD. NAME -->
+      <span class="font-bold">
+        {{ props.product.attributes.name }}
+      </span>
+      <span>
+        -
+      </span>
+      <span>
+        {{ props.product.attributes.sale_price }}
+      </span>
+    </div>
     <!-- PRD. DESCRIPTION -->
     <p class="h-xs overflow-auto p-4">
       {{ props.product.attributes.description }}
