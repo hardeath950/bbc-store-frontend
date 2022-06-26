@@ -16,7 +16,7 @@ const props = defineProps<{
       {{ props.product.attributes.name }}
     </span>
     <!-- PRD. DESCRIPTION -->
-    <p>
+    <p class="h-xs overflow-auto p-4">
       {{ props.product.attributes.description }}
     </p>
   </div>
