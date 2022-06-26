@@ -1,5 +1,4 @@
 // these APIs are auto-imported from @vueuse/core
-import _ from 'lodash'
 import { createCustomFetch } from './cFetch'
 import { useCacheStore } from '~/store/cache'
 import type { SetCacheConfig } from '~/store/cache'
@@ -8,8 +7,10 @@ interface ApiConfig extends SetCacheConfig {
   auth?: boolean
 }
 
-// USE CHACHE STORE
-const useCache = useCacheStore()
+interface StrapiResponse {
+  data?: any
+  meta?: any
+}
 
 /**
  * (Async)
@@ -17,8 +18,11 @@ const useCache = useCacheStore()
  * Return all available records
  */
 export async function useFind(endpoint: string, config?: ApiConfig) {
+  // USE CHACHE STORE
+  const useCache = useCacheStore()
+
   const status = ref(false)
-  const content = ref<any[]>([])
+  const content = ref<StrapiResponse>({})
   const { useCustomFetch } = createCustomFetch({ auth: config?.auth })
 
   const hash = useCache.createHash(`find__${endpoint}`)
@@ -30,15 +34,15 @@ export async function useFind(endpoint: string, config?: ApiConfig) {
   }
   else {
     // FETCH API
-    const { data, statusCode } = await useCustomFetch(endpoint, {}).get().json()
+    const { data, statusCode } = await useCustomFetch(endpoint, {}).json()
     // CHECK STATUS AND SAVE TO CACHE IF CONFIG IS SET
     if (statusCode.value && statusCode.value > 199 && statusCode.value < 300 && config && config.cache) {
       useCache.setValue(hash, data.value, { ...config })
-      content.value = data.value ? _.castArray(data.value) : []
+      content.value = data.value
       status.value = true
     }
     else {
-      content.value = []
+      content.value = data.value
       status.value = false
     }
   }

@@ -27,7 +27,7 @@
   },
   "devDependencies": {
     "@antfu/eslint-config": "^0.25.2",
-    "@iconify-json/carbon": "^1.1.5",
+    "@iconify-json/carbon": "^1.1.6",
     "@intlify/vite-plugin-vue-i18n": "^4.0.0",
     "@types/lodash": "^4.14.182",
     "@types/markdown-it-link-attributes": "^3.0.1",
@@ -57,6 +57,6 @@
     "vite-ssg": "^0.20.1",
     "vite-ssg-sitemap": "^0.2.7",
     "vitest": "^0.14.2",
-    "vue-tsc": "^0.38.1"
+    "vue-tsc": "^0.38.2"
   }
 }
