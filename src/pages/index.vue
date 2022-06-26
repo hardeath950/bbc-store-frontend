@@ -15,7 +15,10 @@ interface Product {
 const products = ref<Product[]>([])
 
 async function loadProducts() {
-  const { content } = await useFind('store-products')
+  const { content } = await useFind('store-products', {
+    cache: true,
+    life: 120,
+  })
   products.value = content.value ? content.value.data : []
 }
 
