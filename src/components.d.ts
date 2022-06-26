@@ -6,7 +6,12 @@ import '@vue/runtime-core'
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     Counter: typeof import('./components/Counter.vue')['default']
+    'Counter copy': typeof import('./components/Counter copy.vue')['default']
     Footer: typeof import('./components/Footer.vue')['default']
+    P: typeof import('./components/P.vue')['default']
+    Product: typeof import('./components/Product.vue')['default']
+    'Product copy': typeof import('./components/Product copy.vue')['default']
+    ProductList: typeof import('./components/ProductList.vue')['default']
     README: typeof import('./components/README.md')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']

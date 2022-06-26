@@ -1,21 +1,14 @@
 <script setup lang="ts">
+import ProductList from '../components/ProductList.vue'
+import type { Product } from '~/types/Store'
 import { useFind } from '~/composables/api'
-
-interface Product {
-  id: number
-  attributes: {
-    createdAt: string
-    name: string
-    description: string
-    sale_price: number
-    images: any[]
-  }
-}
-
 const products = ref<Product[]>([])
 
 async function loadProducts() {
-  const { content } = await useFind('store-products')
+  const { content } = await useFind('store-products', {
+    cache: true,
+    life: 120,
+  })
   products.value = content.value ? content.value.data : []
 }
 
@@ -38,19 +31,9 @@ loadProducts()
       <em text-sm opacity-75>{{ t('intro.desc') }}</em>
     </p>
   </div>
-  <!-- PRODUCTS WRAPPER -->
-  <div class="my-6 flex items-center justify-center space-x-4">
-    <!-- PRODUCT -->
-    <div
-      v-for="product, index in products"
-      :key="`prod_${index}`"
-      class="border-2 p-2 rounded-xl shadow-lg"
-    >
-      {{ product.attributes.name }}
-    </div>
-    <!-- __END PRODUCT -->
-  </div>
-  <!-- _END PRODUCTS WRAPPER -->
+  <!-- PRODUCT LIST -->
+  <ProductList :products="products" cols="3" />
+  <!-- _END PRODUCT LIST -->
 </template>
 
 <route lang="yaml">

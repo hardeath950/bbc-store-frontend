@@ -1,0 +1,24 @@
+<script setup lang="ts">
+// eslint-disable-next-line @typescript-eslint/consistent-type-imports
+import type { Product } from '~/types/Store'
+
+const props = defineProps<{
+  products: Product[]
+  cols?: '1' | '2' | '3' | '4'
+}>()
+</script>
+
+<template>
+  <!-- PRODUCT LIST -->
+  <div class="my-6 p-2 grid grid-cols-2">
+    <!-- PRODUCT -->
+    <Product
+      v-for="product, index in props.products"
+      :key="`prod_${index}`"
+      class="border-2 p-2 rounded-xl shadow-lg m-2"
+      :product="product"
+    />
+    <!-- __END PRODUCT -->
+  </div>
+  <!-- _END PRODUCT LIST -->
+</template>

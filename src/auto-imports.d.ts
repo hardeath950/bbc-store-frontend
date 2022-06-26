@@ -109,6 +109,7 @@ declare global {
   const until: typeof import('@vueuse/core')['until']
   const useActiveElement: typeof import('@vueuse/core')['useActiveElement']
   const useAsyncQueue: typeof import('@vueuse/core')['useAsyncQueue']
+  const useAsyncSleep: typeof import('./composables/helpers')['useAsyncSleep']
   const useAsyncState: typeof import('@vueuse/core')['useAsyncState']
   const useAttrs: typeof import('vue')['useAttrs']
   const useAuthStore: typeof import('./store/auth')['useAuthStore']
@@ -158,6 +159,7 @@ declare global {
   const useFind: typeof import('./composables/api')['useFind']
   const useFocus: typeof import('@vueuse/core')['useFocus']
   const useFocusWithin: typeof import('@vueuse/core')['useFocusWithin']
+  const useFormatter: typeof import('./composables/helpers')['useFormatter']
   const useFps: typeof import('@vueuse/core')['useFps']
   const useFullscreen: typeof import('@vueuse/core')['useFullscreen']
   const useGamepad: typeof import('@vueuse/core')['useGamepad']
@@ -369,6 +371,7 @@ declare module '@vue/runtime-core' {
     readonly until: UnwrapRef<typeof import('@vueuse/core')['until']>
     readonly useActiveElement: UnwrapRef<typeof import('@vueuse/core')['useActiveElement']>
     readonly useAsyncQueue: UnwrapRef<typeof import('@vueuse/core')['useAsyncQueue']>
+    readonly useAsyncSleep: UnwrapRef<typeof import('./composables/helpers')['useAsyncSleep']>
     readonly useAsyncState: UnwrapRef<typeof import('@vueuse/core')['useAsyncState']>
     readonly useAttrs: UnwrapRef<typeof import('vue')['useAttrs']>
     readonly useAuthStore: UnwrapRef<typeof import('./store/auth')['useAuthStore']>
@@ -418,6 +421,7 @@ declare module '@vue/runtime-core' {
     readonly useFind: UnwrapRef<typeof import('./composables/api')['useFind']>
     readonly useFocus: UnwrapRef<typeof import('@vueuse/core')['useFocus']>
     readonly useFocusWithin: UnwrapRef<typeof import('@vueuse/core')['useFocusWithin']>
+    readonly useFormatter: UnwrapRef<typeof import('./composables/helpers')['useFormatter']>
     readonly useFps: UnwrapRef<typeof import('@vueuse/core')['useFps']>
     readonly useFullscreen: UnwrapRef<typeof import('@vueuse/core')['useFullscreen']>
     readonly useGamepad: UnwrapRef<typeof import('@vueuse/core')['useGamepad']>
