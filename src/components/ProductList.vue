@@ -10,7 +10,7 @@ const props = defineProps<{
 
 <template>
   <!-- PRODUCT LIST -->
-  <div :class="`my-6 p-2 grid grid-cols-${props.cols || 2}`">
+  <div class="my-6 p-2 flex flex-wrap">
     <!-- PRODUCT -->
     <Product
       v-for="product, index in props.products"

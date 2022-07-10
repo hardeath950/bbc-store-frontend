@@ -11,12 +11,12 @@ const storageUrl = import.meta.env.VITE_STORAGE_ENDPOINT
 
 <template>
   <!-- PRODUCT -->
-  <div class="flex p-6 font-mono">
+  <div class="flex p-6 font-mono border-1 m-2 max-h-sm max-w-xl">
     <div class="flex-none w-48 mb-10 relative z-10 before:absolute before:top-1 before:left-1 before:w-full before:h-full before:bg-teal-400">
       <img :src="`${storageUrl}${props.product.attributes.images.data[0].attributes.url}`" alt="" class="absolute z-10 inset-0 w-full h-full object-cover rounded-lg" loading="lazy">
     </div>
     <form class="flex-auto pl-6">
-      <div class="relative flex flex-wrap items-baseline pb-6 before:bg-black before:absolute before:-top-6 before:bottom-0 before:-left-60 before:-right-6">
+      <div class="relative flex flex-wrap items-baseline pb-6 bg-black before:absolute before:-top-6 before:bottom-0 before:-left-60 before:-right-6">
         <h1 class="relative w-full flex-none mb-2 text-2xl font-semibold text-white">
           {{ props.product.attributes.name }}
         </h1>
@@ -79,7 +79,7 @@ const storageUrl = import.meta.env.VITE_STORAGE_ENDPOINT
           </svg>
         </button>
       </div>
-      <p class="text-xs leading-6 text-slate-500">
+      <p class="text-xs leading-6 text-slate-500 overflow-hidden max-h-20">
         {{ props.product.attributes.description }}
       </p>
     </form>
