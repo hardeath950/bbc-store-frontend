@@ -6,7 +6,7 @@ const products = ref<Product[]>([])
 
 async function loadProducts() {
   const { content } = await useFind('store-products', {
-    cache: true,
+    cache: false,
     life: 120,
   })
   products.value = content.value ? content.value.data : []
@@ -32,7 +32,7 @@ loadProducts()
     </p>
   </div>
   <!-- PRODUCT LIST -->
-  <ProductList :products="products" cols="3" />
+  <ProductList v-if="products.length" :products="products" cols="1" />
   <!-- _END PRODUCT LIST -->
 </template>
 
