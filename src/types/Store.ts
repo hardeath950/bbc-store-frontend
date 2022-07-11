@@ -5,7 +5,7 @@ export interface Product {
     name: string
     description: string
     sale_price: number
-    images: StrapiFile[]
+    images: StrapiFile
   }
 }
 
