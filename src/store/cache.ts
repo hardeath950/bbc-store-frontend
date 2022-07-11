@@ -40,7 +40,7 @@ export interface SetCacheConfig {
   encrypt?: boolean
 }
 
-export interface cacheStore {
+export interface CacheStore {
   defaultCacheLife: number
   cacheDB: RemovableRef<CacheItem[]>
 }
@@ -50,7 +50,7 @@ export interface cacheStore {
  */
 export const useCacheStore = defineStore('cache', {
   // DEFINE STATE WITH INTERFACE
-  state: (): cacheStore => ({
+  state: (): CacheStore => ({
     // The default time to cache data
     defaultCacheLife: 30,
     // localStorage cache data

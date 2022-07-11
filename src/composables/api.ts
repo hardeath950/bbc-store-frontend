@@ -1,4 +1,5 @@
 // these APIs are auto-imported from @vueuse/core
+import qs from 'qs'
 import { createCustomFetch } from './cFetch'
 import { useCacheStore } from '~/store/cache'
 import type { SetCacheConfig } from '~/store/cache'
@@ -25,8 +26,26 @@ export async function useFind(endpoint: string, config?: ApiConfig) {
   const content = ref<StrapiResponse>({})
   const { useCustomFetch } = createCustomFetch({ auth: config?.auth })
 
-  const hash = useCache.createHash(`find__${endpoint}`)
+  const query = qs.stringify({
+    sort: ['createdAt:desc'],
+    // filters: {},
+    populate: '*',
+    // fields: ['title'],
+    pagination: {
+      pageSize: 10,
+      page: 1,
+    },
+    locale: ['en'],
+  }, {
+    encodeValuesOnly: true, // prettify URL
+  })
+
+  const url = `${endpoint}?${query}`
+
+  const hash = useCache.createHash(`find__${url}`)
   const cached = useCache.getValue(hash)
+
+  //
 
   if (cached && config && config.cache) {
     content.value = cached
@@ -34,7 +53,7 @@ export async function useFind(endpoint: string, config?: ApiConfig) {
   }
   else {
     // FETCH API
-    const { data, statusCode } = await useCustomFetch(endpoint, {}).json()
+    const { data, statusCode } = await useCustomFetch(url, {}).json()
     // CHECK STATUS AND SAVE TO CACHE IF CONFIG IS SET
     if (statusCode.value && statusCode.value > 199 && statusCode.value < 300 && config && config.cache) {
       useCache.setValue(hash, data.value, { ...config })
