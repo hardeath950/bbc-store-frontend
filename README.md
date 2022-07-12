@@ -1,8 +1,11 @@
+### Sonar Qube
 [![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=hardeath950_bbc-store-frontend&metric=security_rating)](https://sonarcloud.io/summary/new_code?id=hardeath950_bbc-store-frontend)
 [![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=hardeath950_bbc-store-frontend&metric=vulnerabilities)](https://sonarcloud.io/summary/new_code?id=hardeath950_bbc-store-frontend)
 [![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=hardeath950_bbc-store-frontend&metric=sqale_rating)](https://sonarcloud.io/summary/new_code?id=hardeath950_bbc-store-frontend)
 [![Bugs](https://sonarcloud.io/api/project_badges/measure?project=hardeath950_bbc-store-frontend&metric=bugs)](https://sonarcloud.io/summary/new_code?id=hardeath950_bbc-store-frontend)
-
+#### LGTM
+[![Total alerts](https://img.shields.io/lgtm/alerts/g/hardeath950/bbc-store-frontend.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/hardeath950/bbc-store-frontend/alerts/)
+[![Language grade: JavaScript](https://img.shields.io/lgtm/grade/javascript/g/hardeath950/bbc-store-frontend.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/hardeath950/bbc-store-frontend/context:javascript)
 
 <p align='center'>
   <img src='https://bobcorn.com.br/wp-content/uploads/2021/04/logo.png' alt='Bobcorn Store Template' width='250'/>
