@@ -44,7 +44,7 @@
     "https-localhost": "^4.7.1",
     "markdown-it-link-attributes": "^4.0.0",
     "markdown-it-prism": "^2.2.4",
-    "pnpm": "^7.3.0",
+    "pnpm": "^7.33.4",
     "typescript": "^4.7.4",
     "unocss": "^0.41.0",
     "unplugin-auto-import": "^0.9.1",
